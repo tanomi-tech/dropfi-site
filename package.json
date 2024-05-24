@@ -1,0 +1,31 @@
+{
+  "name": "dropfi-site",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "packageManager": "pnpm@8.10.0",
+  "scripts": {
+    "dev": "nodemon --exec pnpm start index.js",
+    "start": "pnpm pug && http-server .",
+    "pretty": "js-beautify --type html --replace ./index.html",
+    "pug": "pug --no-debug index.pug && pnpm pretty",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "nodemonConfig": {
+    "verbose": true,
+    "watch": [
+      "**/*.pug"
+    ],
+    "ext": "pug"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "js-beautify": "^1.15.1",
+    "nodemon": "^3.1.0",
+    "pug": "^3.0.2",
+    "pug-cli": "1.0.0-alpha6"
+  }
+}

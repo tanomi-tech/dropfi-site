@@ -1,0 +1,50 @@
+.rotatingtext {
+  transform: translate3d(0, 100px, 0);
+  animation: rotate 10s infinite;
+  transition-timing-function: cubic-bezier(0.2,0.5,0.3,1)
+}
+
+.rotatingtext:nth-of-type(2) {
+  animation-delay: 2.5s;
+}
+
+.rotatingtext:nth-of-type(3) {
+  animation-delay: 5s;
+}
+
+.rotatingtext:nth-of-type(4) {
+  animation-delay: 7.5s;
+}
+
+@keyframes rotate {
+  /* Text is positioned below the wrap */
+  0% {
+    transform: translate3d(0, 100px, 0);
+  }
+
+  /* Move text up and make it visible */
+  2.5% {
+    transform: translate3d(0, 0, 0);
+  } 
+
+  /* Between 2.5% and 25%, nothing changes (text is visible) */
+  25% {
+    transform: translate3d(0, 0, 0);
+  }  
+
+  /* Move text up and out of the wrap */
+  27.5% {
+    transform: translate3d(0, -100px, 0);
+  }
+
+  /* Between 27.5% and 99%, nothing changes (text is invisible) */
+  99.9999% {
+    transform: translate3d(0, -100px, 0);
+  }
+
+  /* Move text to it's original position (loop starts over) */
+  100% {
+    transform: translate3d(0, 100px, 0);
+  }  
+}
+
